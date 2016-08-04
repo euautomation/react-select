@@ -1223,12 +1223,17 @@ var Select = _react2['default'].createClass({
 			var addNewOption = true;
 			//NOTE: only add the "Add" option if none of the options are an exact match
 			filteredOptions.map(function (option) {
-				if (String(option.label).toLowerCase() === filterValue || String(option.value).toLowerCase() === filterValue) {
+				if (option.label.toLowerCase() === filterValue || option.value.toLowerCase() === filterValue) {
 					addNewOption = false;
 				}
 			});
 			if (addNewOption) {
-				filteredOptions.unshift(this.createNewOption(originalFilterValue));
+				var newOption = this.props.newOptionCreator ? this.props.newOptionCreator(originalFilterValue) : {
+					value: originalFilterValue,
+					label: originalFilterValue,
+					create: true
+				};
+				filteredOptions.unshift(newOption);
 			}
 		}
 		return filteredOptions;

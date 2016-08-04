@@ -83,7 +83,7 @@ var _reactSelect = require('react-select');
 
 var _reactSelect2 = _interopRequireDefault(_reactSelect);
 
-var FLAVOURS = [{ label: 'Chocolate', value: 42 }, { label: 'Vanilla', value: 'vanilla' }, { label: 'Strawberry', value: 'strawberry' }, { label: 'Caramel', value: 'caramel' }, { label: 'Cookies and Cream', value: 'cookiescream' }, { label: 'Peppermint', value: 'peppermint' }];
+var FLAVOURS = [{ label: 'Chocolate', value: 'chocolate' }, { label: 'Vanilla', value: 'vanilla' }, { label: 'Strawberry', value: 'strawberry' }, { label: 'Caramel', value: 'caramel' }, { label: 'Cookies and Cream', value: 'cookiescream' }, { label: 'Peppermint', value: 'peppermint' }];
 
 var AllowCreate = _react2['default'].createClass({
 	displayName: 'AllowCreate',
@@ -133,9 +133,7 @@ var AllowCreate = _react2['default'].createClass({
 				multi: true,
 				placeholder: 'Select your favourite(s)',
 				options: this.state.options,
-				onChange: this.handleSelectChange,
-				addItemOnKeyCode: 188
-			}),
+				onChange: this.handleSelectChange }),
 			this.renderHint()
 		);
 	}
